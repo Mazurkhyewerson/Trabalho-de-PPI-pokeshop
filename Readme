@@ -1,0 +1,62 @@
+# 🔴 PokéShop — Avaliação Processual PPI (Multivix)
+
+Seja muito bem-vindo ao repositório do **PokéShop**! Este projeto foi desenvolvido inteiramente do zero como parte da Avaliação Processual da disciplina de **Programação para Internet (PPI)**. O objetivo principal foi criar um sistema web comercial (Full Stack) voltado para a listagem e o cadastro de Pokémons à venda, aplicando na prática conceitos consolidados de arquitetura cliente-servidor, tipagem estrita e responsividade.
+
+---
+
+## 👥 Integrantes do Grupo
+* Mazurkhyewerson Figueira da Silva
+
+## 📝 Tema Escolhido
+**Plataforma de E-commerce e Vitrine Digital para Treinadores Pokémon (PokéShop)**
+A escolha do tema buscou alinhar uma temática lúdica e amplamente conhecida a desafios técnicos reais de desenvolvimento de software: controle de estoque em memória, envio e validação de requisições HTTP, formatação dinâmica de dados e interface adaptável a dispositivos móveis.
+
+---
+
+## ⚙️ Entendendo a Arquitetura do Projeto
+Para que a aplicação funcione de forma robusta e organizada, dividimos o projeto em duas camadas que trabalham juntas, mas de forma independente:
+
+1. **Back-end (`/server`):** Construído com **Node.js**, **Express** e **TypeScript** (padrão ECMAScript 2025). Ele funciona como a inteligência central da aplicação. É ele quem valida se as informações enviadas pelo usuário estão corretas (impedindo preços negativos ou campos em branco), gera IDs únicos baseados no tempo e mantém o "banco de dados" em memória rodando na porta `3000`.
+2. **Front-end (`/client`):** É a interface visual que o usuário interage. Criada com **HTML5 Semântico** (tags como `<header>`, `<main>`, `<section>` e `<footer>`), estilizada com **CSS3 Mobile-First** (garantindo perfeita usabilidade tanto em celulares quanto em telas de computador) e dinamizada com **TypeScript**, que consome os dados da API por meio de funções assíncronas (`fetch` com `async/await`).
+
+*Observação técnica importante:* O uso do tipo `any` foi totalmente proibido em todo o projeto. Todas as funções, variáveis e retornos foram tipados explicitamente, aproveitando o máximo do poder do TypeScript para evitar erros em tempo de execução.
+
+---
+
+## 🚀 Instruções de Execução: Como Rodar o Projeto
+
+Siga o passo a passo abaixo para colocar a PokéShop para funcionar localmente no seu ambiente de desenvolvimento.
+
+### Passo 1: Inicializando e Rodando o Servidor (Back-end)
+O servidor precisa ser o primeiro a ser ligado, pois é dele que o site buscará as informações dos Pokémons disponíveis.
+
+1. Abra o terminal do seu **VSCode** (recomenda-se utilizar o terminal **Command Prompt / CMD** caso o PowerShell do seu Windows apresente restrições de segurança de script).
+2. Entre na pasta do servidor digitando o comando:
+   bash
+   cd server
+**OBS: O que esse comando faz? Ele lê o arquivo package.json e faz o download automático de todas as ferramentas necessárias para criar a pasta node_modules.**
+
+3. Instale todas as dependências do projeto (Express, Cors, TypeScript e interpretadores) rodando o gerenciador de pacotes:
+    bash
+    npm install
+**OBS: Você verá uma mensagem confirmando que o servidor está ativo na porta 3000. Deixe este terminal aberto! Se você fechar essa janela, a loja sairá do ar.**
+
+### Passo 2: Compilando e Abrindo o Site (Front-end)
+Como os navegadores de internet não conseguem ler arquivos TypeScript (.ts) diretamente, precisamos convertê-los em JavaScript comum (.js).
+1. Abra um segundo terminal no seu VSCode (clicando no ícone de + no canto do terminal) para não atrapalhar o servidor que está rodando.
+2. Navegue até a pasta do cliente:
+   Cd cliente
+
+3. Execute o compilador do TypeScript direto na pasta para gerar o arquivo de script utilizável pelo HTML:
+   npx -p typescript tsc app.ts --target es2022 --strict
+**OBS: Esse comando busca o pacote do TypeScript de forma segura e cria o arquivo app.js perfeitamente compatível dentro da pasta client.**
+
+4. Agora é só abrir o arquivo index.html no seu navegador usando a extensão live server clicando com o botão direito no index.html.
+
+
+### Referências Bibliográficas Utilizadas:
+`ADRIANO, Thiago da Silva. Guia prático de TypeScript. (Foco nos Capítulos 5 e 11, aplicados na estruturação de interfaces de dados de contratos de API e mapeamentos estritos de elementos do DOM sem o uso de any).`
+
+`HAVERBEKE, Marijn. Eloquent JavaScript. (Foco nos Capítulos 13 e 20, aplicados na manipulação da árvore do DOM e na criação do servidor assíncrono em ambiente Node.js).`
+
+`FOWLER, Martin. Refatoração. (Princípios de design limpo aplicados na divisão de funções puras para formatação de moedas e mapeamento simplificado de caminhos lógicos).`
