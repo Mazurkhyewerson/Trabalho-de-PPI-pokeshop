@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéShop — Compre Seu Pokémon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>PokéShop</h1>
+    <p>Avaliação Processual PPI — Multivix</p>
+  </header>
+
+  <main>
+    <section class="formulario-box">
+      <h2>Cadastrar Pokémon para Venda</h2>
+      <form id="formCadastro">
+        <div class="field-group">
+          <label for="inputNome">Nome do Pokémon</label>
+          <input type="text" id="inputNome" required placeholder="Ex: Pikachu">
+        </div>
+
+        <div class="field-group">
+          <label for="inputTipo">Tipo Principal</label>
+          <select id="inputTipo" required>
+            <option value="" disabled selected>Escolha um tipo...</option>
+            <option value="Fogo">Fogo</option>
+            <option value="Água">Água</option>
+            <option value="Planta">Planta</option>
+            <option value="Elétrico">Elétrico</option>
+            <option value="Psíquico">Psíquico</option>
+            <option value="Dragão">Dragão</option>
+            <option value="Normal">Normal</option>
+            <option value="Pedra">Pedra</option>
+            <option value="Fantasma">Fantasma</option>
+            <option value="Lutador">Lutador</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="inputPreco">Preço (PokéDólares)</label>
+          <input type="number" id="inputPreco" min="1" required placeholder="Ex: 1500">
+        </div>
+
+        <div class="field-group">
+          <label for="inputDescricao">Descrição do Pokémon</label>
+          <textarea id="inputDescricao" required placeholder="Descreva o Pokémon..."></textarea>
+        </div>
+
+        <button type="submit">Cadastrar Pokémon</button>
+      </form>
+    </section>
+
+    <section class="listagem-box">
+      <h2>Pokémons Disponíveis à Venda</h2>
+      <div id="listaContainer">
+        <div class="loading-box">
+          <div class="spinner"></div>
+          <p class="loading-msg">Carregando Pokémons disponíveis...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>PokéShop &copy; 2026 — Fins Avaliativos Multivix.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background-color: #0b2249; color: #c4d3e2; min-height: 100vh; display: flex; flex-direction: column; }
+header { background-color: #4b0082; padding: 20px; text-align: center; }
+header h1::after { content: '🔴⚪'; margin-left: 10px; font-size: 1.2rem; }
+main { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.formulario-box { background-color: #4b0082; padding: 20px; border-radius: 8px; width: 100%; max-width: 500px; margin: 0 auto; }
+.field-group { margin-bottom: 12px; display: flex; flex-direction: column; gap: 4px; }
+.field-group input, .field-group select, .field-group textarea { padding: 10px; border-radius: 4px; border: 2px solid transparent; }
+.field-group input:focus, .field-group select:focus, .field-group textarea:focus { outline: none; border-color: #ff1c1c; }
+button { width: 100%; padding: 12px; background-color: #ff1c1c; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+button:hover { background-color: #b31212; }
+#listaContainer { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+.card-pokemon { background: white; color: #333; border: 2px solid #FFCB05; border-radius: 8px; padding: 15px; display: flex; flex-direction: column; gap: 8px; transition: transform 0.2s; }
+.card-pokemon:hover { transform: translateY(-4px); }
+.badge-tipo { align-self: flex-start; padding: 3px 8px; border-radius: 12px; color: white; font-size: 0.8rem; font-weight: bold; }
+.tipo-fogo { background: #FF6B35; } .tipo-agua { background: #4A90D9; } .tipo-fantasma { background: #607D8B; }
+.pokemon-nome { font-size: 1.2rem; color: #0b2249; }
+.pokemon-preco { font-size: 1.4rem; font-weight: bold; color: #0b3221; }
+.pokemon-data { font-size: 0.7rem; color: #777; text-align: right; }
+.spinner { width: 30px; height: 30px; border: 3px solid rgba(255,255,255,0.2); border-top-color: #FFCB05; border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (min-width: 768px) { main { flex-direction: row; } .formulario-box { width: 320px; margin: 0; position: sticky; top: 20px; } }
